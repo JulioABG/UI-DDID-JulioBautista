@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <title>TéCafé</title>
+    <link rel="icon" type="image/png" href="recursos/img/TéCafé820x820.png">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-left">
+        <a href="#">
+        <img src="recursos/img/TéCafé820x820.png" alt="Logo TéCafé" class="logo">
+        </a>
+            <div class="nav-links">
+                <a href="#seccion-menu">Menú</a>
+                <a href="#">Recompensas</a>
+                <div class="dropdown">
+                    <button class="dropbtn" id="btn-dropdown">Más</button>
+                    <div class="dropdown-content" id="miDropdown">
+                        <a href="#">Sucursales</a>
+                        <a href="#">Historia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="#seccion-ordenar" class="btn-ordenar" style="text-decoration: none; display: inline-block;">Ordenar</a>
+            <button class="btn-unirse">Unirse</button>
+        </div>
+    </nav>
+
+    <header class="parallax-container">
+        <img src="recursos/img/background2400x1830.jpg" class="capa-1 parallax-layer" id="capa1" alt="Fondo granos">
+        
+        <img src="recursos/img/Capuccino.png" class="capa-2 parallax-layer" id="capa2" alt="Café salpicando">
+        
+        <div class="capa-3 parallax-layer" id="capa3">
+            <img src="recursos/img/coffefondo2400x1603.jpg" alt="Fondo color">
+            <h1 class="titulo-parallax">TéCafé</h1>
+        </div>
+    </header>
+
+    <section class="menu-section" id="seccion-menu">
+        <h2 class="seccion-titulo">Nuestro Menú</h2>
+        <div class="grid-container">
+            <div class="tarjeta"><h3>Hot Latte</h3><p>Clásico y cremoso.</p></div>
+            <div class="tarjeta"><h3>Americano</h3><p>Intenso y puro.</p></div>
+            <div class="tarjeta"><h3>Capuccino</h3><p>Mucha espuma.</p></div>
+            <div class="tarjeta"><h3>Mocha</h3><p>Toque de chocolate.</p></div>
+            <div class="tarjeta"><h3>Matcha Latte</h3><p>Energía verde.</p></div>
+            <div class="tarjeta"><h3>Cold Brew</h3><p>Extracción en frío.</p></div>
+        </div>
+    </section>
+
+    <section class="zona-interactiva" id="seccion-ordenar">
+    <h2 class="seccion-titulo">Elige tus Bebidas</h2>
+    
+    <div class="controles">
+        <button id="btn-hotlatte">Hot Latte</button>
+        <button id="btn-americano">Americano</button>
+        <button id="btn-eliminar">Eliminar</button>
+    </div>
+
+    <div class="bandeja" id="bandeja-bebidas">
+        </div>
+</section>
+
+    <section class="zona-animacion">
+        <h2 class="seccion-titulo">HotLatte Play</h2>
+        <div class="controles-animacion">
+            <button id="btn-play">Reproducir</button>
+            <button id="btn-pause">Pausar</button>
+            <button id="btn-reverse">Regresar</button>
+            <button id="btn-cancel">Cancelar</button>
+        </div>
+        <div class="contenedor-animado">
+            <img src="recursos/img/HotLatte360x360.png" id="vaso-animado" alt="Vaso en movimiento">
+        </div>
+    </section>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
