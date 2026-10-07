@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeAPI</title>
+    <link rel="icon" type="image/png" href="recursos/pokedex.png">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+    <!-- Login y Registro -->
+    <main id="pantalla-auth" class="contenedor-login">
+
+        <!-- Registro Login -->
+        <form id="formulario-login" class="formulario-login">
+            <div class="login-header-img">
+                <img src="recursos/pokedex.png" alt="Pokédex">
+            </div>
+
+
+            <h1>Iniciar sesión</h1>
+            
+            <div class="campo">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" name="correo" placeholder="tucorreo@uacj.mx" required />
+            </div>
+            
+            <div class="campo">
+                <label for="contrasenia">Contraseña</label>
+                <input type="password" id="contrasenia" name="contrasenia" placeholder="Mínimo 6 caracteres" minlength="6" required />
+            </div>
+            
+            <button type="submit" id="boton-login">Entrar</button>
+            
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="#" id="link-ir-registro" style="color: #333; text-decoration: underline; font-weight: bold;">Regístrate aquí</a>
+            </div>
+        </form>
+
+        <!-- Registro Formulario -->
+        <form id="formulario-registro" class="formulario-login" style="display: none;">
+            <h1>Registro</h1>
+            
+            <div class="campo" style="text-align: center;">
+                <img src="recursos/perfil-default.png" alt="Perfil" style="width: 100px; border-radius: 50%; margin-bottom: 10px;">
+                <input type="file" name="foto-perfil" id="foto-perfil" accept="image/*">
+            </div>
+            
+            <div class="campo">
+                <label>Nombre</label>
+                <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+            </div>
+            
+            <div class="campo">
+                <label>Correo</label>
+                <input type="email" name="correo" placeholder="ejemplo@uacj.mx" required>
+            </div>
+            
+            <div class="campo">
+                <label>Contraseña</label>
+                <input type="password" name="contrasenia" placeholder="Mínimo 6 caracteres" minlength="6" required>
+            </div>
+            
+            <div class="campo">
+                <label>Confirmar contraseña</label>
+                <input type="password" name="confirmacion" placeholder="Repite tu contraseña" minlength="6" required>
+            </div>
+            
+            <button type="submit" id="btn-registro">Registrar</button>
+            
+            <div style="text-align: center; margin-top: 15px;">
+                <a href="#" id="link-ir-login" style="color: #333; text-decoration: underline; font-weight: bold;">Volver al Login</a>
+            </div>
+        </form>
+
+    </main>
+
+    <!-- POKEAPI -->
+    <div id="pantalla-dashboard" style="display: none;">
+        <header class="poke-header">
+            <div class="poke-logo">
+                <img src="recursos/pokeball.png" alt="Pokeball">
+                <span>PokeSearch</span>
+            </div>
+            <div class="poke-search-bar">
+                <input type="text" id="poke-input" placeholder="Buscar un pokemon...">
+                <button id="btn-buscar-poke">🔍</button>
+            </div>
+        </header>
+        <div class="poke-container">
+            <div id="vista-pokeapi" class="poke-card-container">
+                <p id="poke-instruccion" style="color: #333; font-size: 20px; font-weight: bold; margin-bottom: 20px;">Busca un Pokémon para empezar</p>
+                <p id="poke-error" style="color: darkred; display: none; font-weight: bold; background: rgba(255,255,255,0.9); padding: 10px; border-radius: 5px;">Pokémon no encontrado. Intenta de nuevo.</p>
+                
+                <div id="poke-resultado" class="poke-card" style="display: none;">
+                    <div class="poke-img-bg">
+                        <img id="poke-imagen" src="" alt="Pokemon">
+                    </div>
+                    <div class="poke-name-badge">
+                        <h3 id="poke-nombre"></h3>
+                    </div>
+                    <div class="poke-stats">
+                        <p id="poke-peso"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Perfil -->
+            <div id="vista-perfil" class="formulario-login" style="display: none; margin: 40px auto;">
+                <button id="btn-volver-poke">← Volver al buscador</button>
+                
+                <h1 style="text-align: center; margin-top: 20px;">Bienvenido, <span id="dash-nombre"></span></h1>
+                <hr style="margin: 20px 0; border: 1px solid #eee;">
+                
+                <h2 style="font-size: 18px; margin-bottom: 15px;">Editar Mi Perfil</h2>
+                <form id="formulario-editar">
+                    <div class="campo">
+                        <label>Nombre</label>
+                        <input type="text" id="edit-nombre" required>
+                    </div>
+                    <div class="campo">
+                        <label>Correo</label>
+                        <input type="email" id="edit-correo" required>
+                    </div>
+                    <div class="campo">
+                        <label>Contraseña nueva</label>
+                        <input type="password" id="edit-contrasenia" placeholder="Mínimo 6 caracteres" minlength="6" required>
+                    </div>
+                    <button type="submit" style="margin-bottom: 15px;">Guardar Cambios</button>
+                </form>
+
+                <button id="btn-eliminar-cuenta" style="margin-bottom: 15px;">Eliminar Cuenta</button>
+                <button id="btn-cerrar-sesion">Cerrar Sesión</button>
+            </div>
+            
+        </div>
+
+        <button id="btn-flotante-perfil" class="btn-flotante">Perfil</button>
+
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
